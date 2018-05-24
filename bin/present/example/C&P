@@ -1,0 +1,142 @@
+package present.example;
+
+//import java.util.AbstractCollection.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.HashMap;
+
+import java.util.TreeSet;
+import java.util.Comparator;
+
+import java.util.Iterator; //Looping through Collections
+
+import java.util.Random; //Determining who wins
+
+import java.util.Scanner; //Input as bids
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		//Collections
+		//Utility class for classes
+		
+		/* 1) Hardcode the Contestants */
+		
+		Contestant[] contestants = new Contestant[4];
+		contestants[0] = new Contestant("Bob", "USA", 	50, 	50, 	20);
+		contestants[1] = new Contestant("Ken", "JAP", 	7, 		7, 		7);
+		contestants[2] = new Contestant("Jen", "SWE", 	20, 	10, 	5);
+		contestants[3] = new Contestant("Jim", "CAN", 	2, 		8, 		1);
+		System.out.println("---");
+		for(int i = 0; i < contestants.length; i++) {
+			contestants[i].printInformation();
+			System.out.println("---");
+		}
+		
+		System.out.println("");
+		System.out.println("-----------");
+		System.out.println("");
+		
+		/* 2) Get Bids */
+		
+		boolean biddingDone = false;
+		
+		HashMap<String, String> customers;
+		
+		Scanner reader = new Scanner(System.in);  // Reading from System.in
+		while(!biddingDone) {
+			System.out.println("Wanna make a bid? y/n: ");
+			char yn = reader.next().charAt(0); // Scans the next token of the input as an int.
+			if(yn == 'n') {
+				System.out.println("Wanna make a bid? y/n: ");
+				customers.put(reader.next(), value)
+				biddingDone = true;
+			} else if(yn == 'y') {
+				System.out.println("Name Please: ");
+				String name = reader.next(); // Scans the next token of the input as an int.
+			} else {
+				//Just keep looping!
+				//Possible error handling in future
+			}
+		}
+		reader.close();
+		
+		System.out.println("");
+		System.out.println("-----------");
+		System.out.println("");
+		
+		/* 3) Determine Winners */
+		
+		System.out.println("The game begins!");
+		System.out.println("...");
+		
+		Random rand = new Random();
+		int[] places = new int[4];
+
+		places[0] = rand.nextInt(4) + 1;
+		//4 is the maximum and the 1 is our minimum
+		places[1] = places[0];
+		places[2] = places[0];
+		places[3] = places[0];
+		while((places[1] == places[0]))
+			places[1] = rand.nextInt(4) + 1;
+		while((places[2] == places[0]) || (places[2] == places[1]))
+			places[2] = rand.nextInt(4) + 1;
+		while((places[3] == places[0]) || (places[3] == places[1]) || (places[3] == places[2]))
+			places[3] = rand.nextInt(4) + 1;
+		
+		//Setting to Contestants
+		for(int i = 0; i < contestants.length; i++)
+			contestants[i].setPlace(places[i]);
+		
+		System.out.println("It's all over now!");
+		
+		/* 4) Setting winners */
+		
+		TreeSet<Contestant> winners = new TreeSet<Contestant>(new Comparator<Contestant>() {
+			public int compare(Contestant a, Contestant b) {
+				if(a.equals(b)){
+					return 0;
+				}else if (a.getPlace() > b.getPlace()){
+					return 1;
+				}else
+					return -1;
+			}
+		});
+		
+		for(int i = 0; i < contestants.length; i++)
+			winners.add(contestants[i]);
+		
+		System.out.println("");
+		System.out.println("-----------");
+		System.out.println("");
+		
+		/* 5) Displays Winners */
+		
+		Iterator<Contestant> winItr = winners.iterator();
+	    while(winItr.hasNext()){
+	    	Contestant current = winItr.next();
+	    	switch(current.getPlace()) {
+	    	case 1:
+	    		System.out.println(current.getPlace() + "st Place!:");
+	    		break;
+	    	case 2:
+		    	System.out.println(current.getPlace() + "nd Place!:");
+	    		break;
+	    	case 3:
+		    	System.out.println(current.getPlace() + "rd Place!:");
+	    		break;
+	    	case 4:
+		    	System.out.println(current.getPlace() + "th Place!:");
+	    		break;
+	    	}
+	    	current.printInformation();
+	    	
+	    }
+	    
+	    System.out.println("");
+		System.out.println("-----------");
+		System.out.println("");
+	}
+}

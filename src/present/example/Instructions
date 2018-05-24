@@ -1,0 +1,17 @@
+/*Assignment:
+-------------
+How to use each of the three primary collection implementations...
+(ArrayList, HashSet, and HashMap) derived from: (List, Set, and Map)
+ 
+...Plus one additional collection chosen from the following list:
+ 
+	LinkedHashSet
+>TreeSet
+	LinkedList
+	LinkedHashMap
+	TreeMap
+ 
+Main method demonstrates how to use
+ 
+Practice with group if necessary
+*/

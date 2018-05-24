@@ -1,0 +1,109 @@
+		//=Treesets=//
+		
+		//My thought process for practical example:
+		
+		/*----------------------*/
+		/*What Sets are good for:*/
+		/*-----------------------*/
+		//Printing
+		//Group Manipulation
+			//Feed to another area of code
+				//A method
+				//A loop
+				//Ect
+		//Size
+				
+		/*----------------------*/
+		/*What Trees are good for:*/
+		/*------------------------*/
+		//Sorting according to an order
+			//Efficient
+		
+		/*----------------------*/
+		/*TreeSets are good for:*/
+		/*----------------------*/
+		//Printing in order
+		//Group Manipulation that changes
+		//  relatively based on placement/order
+		
+		/*An example of Group Manipulation that changes relatively*/
+		//Would
+			//Be
+				//Something
+					//Like
+						//This
+		//Where indentation changes per element...
+		//You CAN do this with a normal Set, but with an ordered
+		//Set it restricts and implies that Order is imperative
+		
+		
+		//So =TreeSet= is really good at collecting objects and displaying them...
+		
+		/*Senario:
+		
+		A contest of 4 individuals (Ben, Jen, Len, Ken)
+		One will come in 1st, one 2nd, 3rd, 4th
+		
+		There will be infinite number of Gamblers/Customers/Bidders
+		Each customer can make an infinite number of Bids
+		
+		There will also be a crowd of infinite number of people
+		A spotlight will randomly shift between people
+		*/
+		
+		//HashMap(...of Contestants)
+			//You'll only ever need to access them on name...
+			//Except for when we're getting the winners in which case
+		//TreeSet(...of Winner-Contestants based on placement)
+			//Print out Contestant.place sheet
+				//Most people won't care about individuals,
+				//  most will only care about the list of places
+				//  and the contest is small enough to see all at a glance
+		//HashMap(...of Gamblers/Customers Names) which is linked to an...
+			//ArrayList(...of an Individual's Bids)
+				//A person can make duplicate bids instead of altering previous bids
+				//(That way you can be sure the ticket-seller isn't making
+				//	a mistake or part of some deliberate scam to make more money)
+				//You can isolate individual bids based on certain properties
+				//	(IE bids above $10,000)
+		//HashSet(...of Observers/Crowd)
+			//Visitors are just a big jumble of people
+			//The spotlight will only pick out one of them randomly anyways so order doesn't matter
+				
+		>Program
+			-Contests (HashMap)
+			-Gamblers (HashMap
+				*Bids (ArrayList)
+			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/*Fun Facts about TreeSet*/
+		//Java's TreeSet is backed by a red-black tree
+			//red-black tree is a self-sorting tree structure
+			//where each line alternates between red and black,
+			//Starts with Black (Important)
+			//All Leaf-Nodes are set to null/nil and are black
+				//Due to this, all red nodes must have 2 black children
+				//Due to this, every branch of the tree must have the same
+				//amount of blacks
+			//All of these properties are used to maintain its structure
